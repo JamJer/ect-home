@@ -4,15 +4,12 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 var jwt = require('jsonwebtoken') // JWT for auth
 const secret = 'iloveectrttrader' // JWT Server side secret key
-const config = require('../config/config');
-const login_apiUrl = '//127.0.0.1:3001/user/login' 
-const register_apiUrl = '//127.0.0.1:3001/user/register'
-const keyactivate_apiUrl = '//127.0.0.1:3001/key/activate'
-const keydeactivate_apiUrl = '//127.0.0.1:3001/key/deactivate'
+// const config = require('../config/config');
+const domain_url = 'https://ectrader.herokuapp.com:80'
 
 export const UserLogin = ({ commit }, data) => {
 	return new Promise((resolve, reject) => {
-		Vue.http.post(config.server.url+"/user/login", data)
+		Vue.http.post(domain_url+"/user/login", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {
@@ -40,7 +37,7 @@ export const UserLogout = ({ commit }, data) => {
 
 export const UserReg = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
-		Vue.http.post(config.server.url+"/user/register", data)
+		Vue.http.post(domain_url+"/user/register", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {
@@ -63,7 +60,7 @@ export const UserReg = ({ commit }, data) => {
 
 export const KeyActivate = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
-		Vue.http.post(config.server.url+"/key/activate", data)
+		Vue.http.post(domain_url+"/key/activate", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {
@@ -80,7 +77,7 @@ export const KeyActivate = ({ commit }, data) => {
 
 export const KeyDeactivate = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
-		Vue.http.post(config.server.url+"/key/deactivate", data)
+		Vue.http.post(domain_url+"/key/deactivate", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {
