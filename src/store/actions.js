@@ -4,6 +4,7 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 var jwt = require('jsonwebtoken') // JWT for auth
 const secret = 'iloveectrttrader' // JWT Server side secret key
+const config = require('.../config/config.default');
 const login_apiUrl = '//127.0.0.1:3001/user/login' 
 const register_apiUrl = '//127.0.0.1:3001/user/register'
 const keyactivate_apiUrl = '//127.0.0.1:3001/key/activate'
@@ -11,7 +12,7 @@ const keydeactivate_apiUrl = '//127.0.0.1:3001/key/deactivate'
 
 export const UserLogin = ({ commit }, data) => {
 	return new Promise((resolve, reject) => {
-		Vue.http.post(login_apiUrl, data)
+		Vue.http.post(config.server.url+"/user/login", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {
@@ -39,7 +40,7 @@ export const UserLogout = ({ commit }, data) => {
 
 export const UserReg = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
-		Vue.http.post(register_apiUrl, data)
+		Vue.http.post(config.server.url+"/user/register", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {
@@ -62,7 +63,7 @@ export const UserReg = ({ commit }, data) => {
 
 export const KeyActivate = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
-		Vue.http.post(keyactivate_apiUrl, data)
+		Vue.http.post(config.server.url+"/key/activate", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {
@@ -79,7 +80,7 @@ export const KeyActivate = ({ commit }, data) => {
 
 export const KeyDeactivate = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
-		Vue.http.post(keydeactivate_apiUrl, data)
+		Vue.http.post(config.server.url+"/key/deactivate", data)
 		.then(function (response) {
 			console.log(response);
 			if (!response.ok) {

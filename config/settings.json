@@ -1,0 +1,6 @@
+{
+    "server": {
+        "url": "https://ectrader.herokuapp.com",
+        "port": 80
+    }
+}
