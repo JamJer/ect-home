@@ -4,7 +4,7 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 var jwt = require('jsonwebtoken') // JWT for auth
 const secret = 'iloveectrttrader' // JWT Server side secret key
-const config = require('.../config/config.default');
+const config = require('../config/config');
 const login_apiUrl = '//127.0.0.1:3001/user/login' 
 const register_apiUrl = '//127.0.0.1:3001/user/register'
 const keyactivate_apiUrl = '//127.0.0.1:3001/key/activate'
