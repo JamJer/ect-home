@@ -4,6 +4,7 @@ import Main from '@/components/Main'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Trading from '@/components/Trading'
+import Key from '@/components/Key'
 Vue.use(Router)
 
 export default new Router({
@@ -31,6 +32,11 @@ export default new Router({
       path: '/Trading',
       name: 'Trading',
       component: Trading // Need authorization
+    },
+    {
+      path: '/Key',
+      name: 'Key',
+      component: Key // Need authorization
     },
     { path: '/*', redirect: '/Main' } // When no url path match, redirect to Main
   ]//

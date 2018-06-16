@@ -1,3 +1,5 @@
 export const USER_SIGNIN = 'USER_SIGNIN' 
 export const USER_SIGNOUT = 'USER_SIGNOUT' 
 export const USER_REG = 'USER_REG' 
+export const USER_KEY_ACTIVATE = 'USER_KEY_ACTIVATE'
+export const USER_KEY_INACTIVE = 'USER_KEY_DEACTIVATE'

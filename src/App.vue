@@ -27,6 +27,9 @@
             <router-link :to="'/Register'" v-show="!isLoggedIn" class="nav-link"><font size="4" color="#66ffcc">SIGN UP</font></router-link>
           </li>
           <li class="nav-item">
+            <router-link :to="'/Key'" v-show="isLoggedIn" class="nav-link"><font size="4" color="#ffdb4d">PRODUCT ACTIVE</font></router-link>
+          </li>
+          <li class="nav-item">
             <a @click="logOut()" v-show="isLoggedIn" class="nav-link"><font size="4" color="#ccccff">LOG OUT</font></a>
           </li>
           <li class="nav-item">
