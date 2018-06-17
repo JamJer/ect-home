@@ -118,10 +118,11 @@ export default {
       vm.loggingIn = true;
       this.$store.dispatch('UserLogin', this.postData).then(response => {
         setTimeout(function(){
-          if(response.data.msg == 'not found'){
+          let res = response;
+          if(res.msg == 'not found'){
             vm.loggingIn = false;
             vm.error = "Your user name dosen't exist!";
-          }else if(response.data.msg == 'success'){
+          }else if(res.msg == 'success'){
             vm.loggingIn = false;
             vm.$router.replace('./Trading');
           }else{
