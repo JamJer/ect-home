@@ -91,15 +91,13 @@ function login(arg) {
                 })
                 .then((body) => {
                     // Body will be the result
-                    console.log(body)
-
+                    //console.log(body)
+                    let obj = JSON.parse(body)
+                    //console.log(obj)
                     /**
-                     * @param {string} body.msg => success or fail 等等的錯誤訊息
-                     * @param {string} body.key => 使用者成功登入後，獲得的金鑰
+                     * @param {string} obj.msg => success or fail 等等的錯誤訊息
+                     * @param {string} obj.key => 使用者成功登入後，獲得的金鑰
                      */
-
-                    //console.log(res);
-                    //return res;
                 })
         })
     return null;
