@@ -84,15 +84,22 @@ function login(arg) {
         })
         .then((res, body) => {
             // redirect to new link
-            console.log(res)
-            rp.post(domain_url + "/user/login", {
+            // console.log("Print out the response from first request.")
+            console.log(res.url)
+            rp.post(res.url, {
                     form: arg
                 })
                 .then((body) => {
                     // Body will be the result
-                    let res = JSON.parse(body);
-                    console.log(res);
-                    return res;
+                    console.log(body)
+
+                    /**
+                     * @param {string} body.msg => success or fail 等等的錯誤訊息
+                     * @param {string} body.key => 使用者成功登入後，獲得的金鑰
+                     */
+
+                    //console.log(res);
+                    //return res;
                 })
         })
     return null;
