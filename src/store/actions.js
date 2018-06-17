@@ -5,7 +5,7 @@ Vue.use(VueResource)
 var jwt = require('jsonwebtoken') // JWT for auth
 const secret = 'iloveectrttrader' // JWT Server side secret key
 // const config = require('../config/config');
-const domain_url = 'https://ectrader.herokuapp.com:80'
+const domain_url = 'https://ectrader.herokuapp.com'
 
 export const UserLogin = ({ commit }, data) => {
 	return new Promise((resolve, reject) => {
